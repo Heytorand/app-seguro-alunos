@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Admin</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',sans-serif;background:#1a1a2e;color:#e0e0e0}.container{max-width:600px;margin:0 auto;padding:20px}h1{color:#E8621A;margin-bottom:16px}table{width:100%;border-collapse:collapse}th{text-align:left;padding:8px;color:#E8621A;border-bottom:2px solid #2a3a5c}td{padding:8px;border-bottom:1px solid #2a3a5c}a{color:#E8621A}</style></head>
+<body><div class="container"><h1>🛡️ Admin — Usuários</h1><p style="margin-bottom:12px"><a href="/">← Voltar</a></p>
+<table><thead><tr><th>ID</th><th>Nome</th><th>Email</th><th>Senha</th><th>Role</th></tr></thead>
+<tbody><% usuarios.forEach(u => { %><tr><td><%= u.id %></td><td><%= u.nome %></td><td><%= u.email %></td><td style="color:#E74C3C"><%= u.senha %></td><td><%= u.role %></td></tr><% }); %></tbody></table>
+<p style="margin-top:20px;color:#E74C3C;font-weight:600">⚠️ Quantas vulnerabilidades você consegue ver nesta página?</p>
+</div></body></html>

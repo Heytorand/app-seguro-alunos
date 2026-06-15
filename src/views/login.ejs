@@ -1,0 +1,8 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Login</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',sans-serif;background:#1a1a2e;color:#e0e0e0;display:flex;justify-content:center;align-items:center;min-height:100vh}.c{max-width:400px;width:100%;padding:24px}.card{background:#16213e;border:1px solid #2a3a5c;border-radius:12px;padding:24px}.card h2{color:#E8621A;margin-bottom:16px}input{width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #2a3a5c;background:#0f3460;color:#e0e0e0;font-size:1rem}button{width:100%;padding:10px;border:none;border-radius:6px;background:#E8621A;color:white;font-size:1rem;cursor:pointer;font-weight:600;margin-top:8px}.flash{background:rgba(232,98,26,.15);border:1px solid #E8621A;border-radius:8px;padding:10px;margin-bottom:12px;text-align:center;color:#E8621A}.link{text-align:center;margin-top:10px}.link a{color:#E8621A}</style></head>
+<body><div class="c"><h1 style="color:#E8621A;text-align:center;margin-bottom:20px">⚠️ App Vulnerável</h1>
+<% if (flash) { %><div class="flash"><%= flash %></div><% } %>
+<div class="card"><h2>Login</h2><form method="POST" action="/login">
+<input type="email" name="email" placeholder="Email" required>
+<input type="password" name="senha" placeholder="Senha" required>
+<button type="submit">Entrar</button></form>
+<div class="link"><a href="/registro">Criar conta</a></div></div></div></body></html>

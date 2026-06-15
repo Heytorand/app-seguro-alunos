@@ -1,0 +1,4 @@
+import "express-session";
+declare module "express-session" {
+  interface SessionData { userId: number; userName: string; userRole: string; flash: string|null; }
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Home</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',sans-serif;background:#1a1a2e;color:#e0e0e0}.container{max-width:600px;margin:0 auto;padding:20px}header{background:#16213e;border-bottom:3px solid #E8621A;padding:14px 0}header .inner{max-width:600px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}header h1{color:#E8621A;font-size:1.2rem}header a{color:#889;text-decoration:none;margin-left:12px;font-size:.9rem}.flash{background:rgba(232,98,26,.15);border:1px solid #E8621A;border-radius:8px;padding:10px;margin:12px 0;text-align:center;color:#E8621A}.card{background:#16213e;border:1px solid #2a3a5c;border-radius:10px;padding:16px;margin-bottom:12px}.card h3{color:#E8621A;margin-bottom:4px}.card .meta{font-size:.8rem;color:#889;margin-bottom:6px}textarea{width:100%;padding:10px;border-radius:6px;border:1px solid #2a3a5c;background:#0f3460;color:#e0e0e0;font-size:1rem;resize:vertical}button{padding:8px 16px;border:none;border-radius:6px;background:#E8621A;color:white;cursor:pointer;font-weight:600;margin-top:6px}.btn-danger{background:#E74C3C;padding:3px 8px;font-size:.8rem}</style></head>
+<body>
+<header><div class="inner"><h1>⚠️ Blog Vulnerável</h1><div>👤 <%= nome %><a href="/admin">Admin</a><a href="/logout" style="color:#E74C3C">Sair</a></div></div></header>
+<div class="container">
+<% if (flash) { %><div class="flash"><%= flash %></div><% } %>
+<div class="card"><h3>Novo Comentário</h3><form method="POST" action="/comentar">
+<textarea name="texto" rows="3" placeholder="Escreva um comentário..." required></textarea>
+<button type="submit">Comentar</button></form></div>
+<h2 style="color:#E8621A;margin:16px 0 10px">Comentários</h2>
+<% comentarios.forEach(c => { %>
+<div class="card">
+<div class="meta"><strong><%= c.autor %></strong> — <%= c.data %></div>
+<%# ⚠️ VULNERABILIDADE XSS: usando <%- em vez de <%= ! %>
+<p><%- c.texto %></p>
+<div style="display:flex;gap:6px;margin-top:8px">
+<form method="POST" action="/comentarios/<%= c.id %>/remover"><button type="submit" class="btn-danger">Remover</button></form>
+</div></div>
+<% }); %>
+</div></body></html>
