@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Caçar vulnerabilidades + Adicionar proteção — Aula 36",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/app.ts"
+    "dev": "ts-node-dev --respawn --files src/app.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
