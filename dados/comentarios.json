@@ -5,12 +5,5 @@
     "autor": "Admin",
     "texto": "Bem-vindos ao blog!",
     "data": "2026-06-01"
-  },
-  {
-    "id": 2,
-    "userId": 2,
-    "autor": "Ana",
-    "texto": "Olá pessoal!",
-    "data": "2026-06-02"
   }
 ]
