@@ -95,6 +95,7 @@ app.post("/login", async (req, res) => {
     req.session.flash = "Email ou senha incorretos.";
     res.redirect("/login");
     return;
+    
   }
 
   if (!user.senha.startsWith("$2")) {
