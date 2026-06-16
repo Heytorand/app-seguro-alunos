@@ -3,7 +3,7 @@
     "id": 1,
     "nome": "Admin",
     "email": "admin@teste.com",
-    "senha": "123456",
+    "senha": "$2b$12$xt9V/pYqn6lRWbKfm6nWV.W5ZPqQ.NjHObSQdVxF.ZwxI4czqvHDu",
     "role": "admin"
   },
   {
