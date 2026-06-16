@@ -10,14 +10,8 @@
     "id": 2,
     "nome": "Ana",
     "email": "ana@teste.com",
-    "senha": "minhasenha",
-    "role": "user"
-  },
-  {
-    "id": 3,
-    "nome": "heytor",
-    "email": "heytorferba@gmail.com",
-    "senha": "$2b$12$mZ30Nqe5IVAODUFclOJ4hu4.tTOGeJ4DYManw6PCtZ1IWnSNotK6y",
+    "senha": "123456",
     "role": "user"
   }
+
 ]
