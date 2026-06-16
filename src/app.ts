@@ -2,10 +2,10 @@ import express, { Request, Response } from "express";
 import session from "express-session";
 import bcrypt from "bcrypt";
 import helmet from "helmet";
+import cors from "cors";
 import rateLimit from "express-rate-limit";
 import { body, validationResult } from "express-validator";
 import { readFileSync, writeFileSync } from "fs";
-
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -95,7 +95,7 @@ app.post("/login", async (req, res) => {
     req.session.flash = "Email ou senha incorretos.";
     res.redirect("/login");
     return;
-    
+
   }
 
   if (!user.senha.startsWith("$2")) {
