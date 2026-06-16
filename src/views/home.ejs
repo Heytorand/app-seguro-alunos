@@ -7,13 +7,22 @@
 <textarea name="texto" rows="3" placeholder="Escreva um comentário..." required></textarea>
 <button type="submit">Comentar</button></form></div>
 <h2 style="color:#E8621A;margin:16px 0 10px">Comentários</h2>
+
 <% comentarios.forEach(c => { %>
 <div class="card">
-<div class="meta"><strong><%= c.autor %></strong> — <%= c.data %></div>
-<%# ⚠️ VULNERABILIDADE XSS: usando <%- em vez de <%= ! %>
-<p><%- c.texto %></p>
-<div style="display:flex;gap:6px;margin-top:8px">
-<form method="POST" action="/comentarios/<%= c.id %>/remover"><button type="submit" class="btn-danger">Remover</button></form>
-</div></div>
+  <div class="meta">
+    <strong><%= c.autor %></strong> — <%= c.data %>
+  </div>
+
+  <%# XSS corrigido: usar <%= para escapar HTML %>
+  <p><%= c.texto %></p>
+
+  <div style="display:flex;gap:6px;margin-top:8px">
+    <form method="POST" action="/comentarios/<%= c.id %>/remover">
+      <button type="submit" class="btn-danger">
+        Remover
+      </button>
+    </form>
+  </div>
+</div>
 <% }); %>
-</div></body></html>

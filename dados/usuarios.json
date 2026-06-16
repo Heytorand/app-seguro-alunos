@@ -10,8 +10,7 @@
     "id": 2,
     "nome": "Ana",
     "email": "ana@teste.com",
-    "senha": "123456",
+    "senha": "$2b$12$IehFv07UWLffWpzC3F3e2uhrUuzLhXckXY7ebfflFvCIpJTmegu.e",
     "role": "user"
   }
-
 ]
