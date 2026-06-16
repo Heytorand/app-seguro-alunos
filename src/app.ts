@@ -92,7 +92,7 @@ app.post("/login", async (req, res) => {
   const users = carregarUsers();
   const user = users.find((u) => u.email.toLowerCase() === String(email).toLowerCase());
   if (!user || !(await verifyPassword(user, senha))) {
-    req.session.flash = "Email ou senha inválidos.";
+    req.session.flash = "Email ou senha incorretos.";
     res.redirect("/login");
     return;
   }
